@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Record Sale{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <div>
+    <h1 class="page-title">Record a Sale</h1>
+    <div class="page-subtitle">Deducts stock automatically</div>
+  </div>
+</div>
+
+<div class="card">
+  {% if products %}
+  <form method="post">
+    <div class="form-grid">
+      <div class="field full">
+        <label for="product_id">Product</label>
+        <select id="product_id" name="product_id" required>
+          <option value="">Select a product…</option>
+          {% for p in products %}
+          <option value="{{ p.id }}">{{ p.name }} — {{ p.sku }} (${{ "%.2f"|format(p.unit_price) }}, {{ p.quantity_in_stock }} in stock)</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="quantity_sold">Quantity Sold</label>
+        <input type="number" id="quantity_sold" name="quantity_sold" min="1" value="1" required>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-accent">Record Sale</button>
+      <a href="{{ url_for('list_sales') }}" class="btn btn-outline">Cancel</a>
+    </div>
+  </form>
+  {% else %}
+  <div class="empty-state">No products available. <a href="{{ url_for('add_product') }}">Add a product first</a>.</div>
+  {% endif %}
+</div>
+
+{% endblock %}

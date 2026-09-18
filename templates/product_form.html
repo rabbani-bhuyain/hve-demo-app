@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Edit' if mode == 'edit' else 'Add' }} Product{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <div>
+    <h1 class="page-title">{{ 'Edit Product' if mode == 'edit' else 'Add Product' }}</h1>
+    <div class="page-subtitle">{{ 'Update details for this item' if mode == 'edit' else 'Register a new item in inventory' }}</div>
+  </div>
+</div>
+
+<div class="card">
+  <form method="post">
+    <div class="form-grid">
+      <div class="field full">
+        <label for="name">Product Name</label>
+        <input type="text" id="name" name="name" value="{{ product.name if product else '' }}" required>
+      </div>
+
+      {% if mode == 'add' %}
+      <div class="field">
+        <label for="sku">SKU</label>
+        <input type="text" id="sku" name="sku" value="{{ product.sku if product else '' }}" required>
+      </div>
+      {% endif %}
+
+      <div class="field">
+        <label for="category">Category</label>
+        <input type="text" id="category" name="category" value="{{ product.category if product else '' }}" required>
+      </div>
+
+      <div class="field">
+        <label for="quantity_in_stock">Quantity in Stock</label>
+        <input type="number" id="quantity_in_stock" name="quantity_in_stock" min="0" value="{{ product.quantity_in_stock if product else 0 }}" required>
+      </div>
+
+      <div class="field">
+        <label for="reorder_level">Reorder Level</label>
+        <input type="number" id="reorder_level" name="reorder_level" min="0" value="{{ product.reorder_level if product else 5 }}" required>
+      </div>
+
+      <div class="field">
+        <label for="unit_price">Unit Price ($)</label>
+        <input type="number" step="0.01" id="unit_price" name="unit_price" min="0" value="{{ product.unit_price if product else '' }}" required>
+      </div>
+
+      <div class="field">
+        <label for="supplier">Supplier (optional)</label>
+        <input type="text" id="supplier" name="supplier" value="{{ product.supplier if product else '' }}">
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">{{ 'Save Changes' if mode == 'edit' else 'Add Product' }}</button>
+      <a href="{{ url_for('list_products') }}" class="btn btn-outline">Cancel</a>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

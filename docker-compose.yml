@@ -1,0 +1,10 @@
+services:
+  stockroom-inventory-app:
+    build: .
+    ports:
+      - "${APP_PORT:-5000}:5000"
+    volumes:
+      - inventory-data:/data
+
+volumes:
+  inventory-data:

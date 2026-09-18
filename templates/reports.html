@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Reports{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <div>
+    <h1 class="page-title">Reports</h1>
+    <div class="page-subtitle">Top performers</div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="card-title">Top Products by Revenue</h2>
+  {% if top_products %}
+  <table>
+    <thead><tr><th>Product</th><th class="num">Units Sold</th><th class="num">Revenue</th></tr></thead>
+    <tbody>
+      {% for p in top_products %}
+      <tr>
+        <td>{{ p.name }}</td>
+        <td class="num">{{ p.total_sold }}</td>
+        <td class="num">${{ "%.2f"|format(p.total_revenue) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <div class="empty-state">No sales data yet.</div>
+  {% endif %}
+</div>
+
+<div class="card">
+  <h2 class="card-title">Revenue by Category</h2>
+  {% if revenue_by_category %}
+  <table>
+    <thead><tr><th>Category</th><th class="num">Revenue</th></tr></thead>
+    <tbody>
+      {% for c in revenue_by_category %}
+      <tr>
+        <td>{{ c.category }}</td>
+        <td class="num">${{ "%.2f"|format(c.total_revenue) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <div class="empty-state">No sales data yet.</div>
+  {% endif %}
+</div>
+
+{% endblock %}
