@@ -1,6 +1,5 @@
 """
 Small Business Inventory & Sales (POS) System
-Author: Bervely Pangwana
 
 A Flask + SQLite CRUD web application for managing product inventory and
 recording sales for a small business.

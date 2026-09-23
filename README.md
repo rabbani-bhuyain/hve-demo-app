@@ -1,6 +1,5 @@
 # Stockroom - Small Business Inventory & Sales (POS) System
 
-**Author:** Bervely Pangwana
 **Tools used:** Python, Flask, SQLite, HTML/CSS, Jinja2
 
 ## Project Overview

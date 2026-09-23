@@ -13,6 +13,7 @@
     <aside class="sidebar">
       <div class="sidebar-brand">Stockroom</div>
       <div class="sidebar-tagline">Inventory &amp; Sales</div>
+      <div class="sidebar-tagline">A Demo App for HVE Workshop</div>
       <nav class="sidebar-nav">
         <a href="{{ url_for('dashboard') }}" class="{{ 'active' if request.endpoint == 'dashboard' }}">Dashboard</a>
         <a href="{{ url_for('list_products') }}" class="{{ 'active' if request.endpoint in ['list_products','add_product','edit_product'] }}">Products</a>
