@@ -1,4 +1,4 @@
-# Stockroom - Small Business Inventory & Sales (POS) System
+# HVE Demo App: Stockroom - Inventory & Sales (POS) System
 
 **Purpose:** This demo app will be used for the HVE workshop. \
 **Tools used:** Python, Flask, SQLite, HTML/CSS, Jinja2
@@ -40,16 +40,17 @@ Recording a sale is a transaction that touches both tables: it inserts a row
 into `sales` and decrements `quantity_in_stock` in `products` - with
 validation to prevent selling more stock than is available.
 
-## Screenshots
 
-### Dashboard
-![Dashboard](screenshots/dashboard.png)
+## How to Run in GitHub Codespaces
+1. Create or Open your Codespace 
+![Create or Run codespace on main](screenshots/Codespaces01.png)
 
-### Product Management
-![Products](screenshots/products.png)
+2. In Codespace's VS Code terminal execute the command below:
+  ```bash
+  docker compose up --build
+  ```
 
-### Recording a Sale
-![Record Sale](screenshots/record_sale.png)
+![Deploy the project and open in browser](screenshots/Codespaces02.png)  
 
 ## How to Run Locally with Docker Compose
 
@@ -59,6 +60,7 @@ validation to prevent selling more stock than is available.
   ```bash
   docker compose up --build
   ```
+
 
 3. Open your browser to <http://localhost:5000>.
 4. The SQLite database is created automatically on first run and stored in the
@@ -103,6 +105,8 @@ directly.
 3. Open your browser to <http://127.0.0.1:5000>
 4. The SQLite database (`inventory.db`) is created automatically on first run
 
+
+
 ## Testing
 Core functionality (adding products, duplicate SKU rejection, recording
 sales, stock deduction, and blocking oversell attempts) was verified with a
@@ -117,3 +121,15 @@ complete.
 - Reports are basic; could be extended with date-range filtering and charts
 - Currently single-currency, single-location a real multi-branch business
   would need location tracking per product
+
+
+## Screenshots
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Product Management
+![Products](screenshots/products.png)
+
+### Recording a Sale
+![Record Sale](screenshots/record_sale.png)
