@@ -1,5 +1,6 @@
 # Stockroom - Small Business Inventory & Sales (POS) System
 
+**Purpose:** This demo app will be used for the HVE workshop. \
 **Tools used:** Python, Flask, SQLite, HTML/CSS, Jinja2
 
 ## Project Overview
