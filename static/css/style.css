@@ -1,22 +1,22 @@
 /* ==========================================================================
-   Design tokens — "Stock Ledger" system
+   Design tokens — Insight-inspired system
    ========================================================================== */
 :root {
-  --paper: #f7f5f0;
+  --paper: #f5f7fa;
   --surface: #ffffff;
-  --ink: #1e2a38;
-  --ink-soft: #52606d;
-  --brand: #2b4570;
-  --brand-dark: #1c2e4a;
-  --accent: #c97a2b;
-  --accent-soft: #f4e3cf;
-  --success: #3f7d58;
-  --success-soft: #e1efe6;
-  --danger: #b03a2e;
-  --danger-soft: #f6e3e1;
-  --border: #dfd9c9;
+  --ink: #202936;
+  --ink-soft: #5b6675;
+  --brand: #e40046;
+  --brand-dark: #652a47;
+  --accent: #e40046;
+  --accent-soft: #fbe3eb;
+  --success: #147d72;
+  --success-soft: #dff2ef;
+  --danger: #b4233c;
+  --danger-soft: #fbe5e9;
+  --border: #d8dee7;
 
-  --font-display: "Fraunces", "Georgia", serif;
+  --font-display: "IBM Plex Sans", "Segoe UI", sans-serif;
   --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", "Courier New", monospace;
 }
@@ -46,7 +46,7 @@ a:hover { text-decoration: underline; }
 
 .sidebar {
   background: var(--brand-dark);
-  color: #e8ecf1;
+  color: #f3f5f8;
   padding: 28px 20px;
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@ a:hover { text-decoration: underline; }
 .sidebar-brand {
   font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   color: #ffffff;
   margin-bottom: 4px;
 }
@@ -150,7 +150,7 @@ a:hover { text-decoration: underline; }
   color: var(--ink);
   border-color: var(--border);
 }
-.btn-outline:hover { background: #eee9dd; text-decoration: none; }
+.btn-outline:hover { background: #eef1f5; }
 
 .btn-danger { background: var(--danger); color: #fff; }
 .btn-danger:hover { filter: brightness(0.92); }
@@ -170,7 +170,7 @@ a:hover { text-decoration: underline; }
 .stat-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 18px 20px;
 }
 
@@ -196,7 +196,7 @@ a:hover { text-decoration: underline; }
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 22px 24px;
   margin-bottom: 24px;
 }
@@ -214,9 +214,9 @@ a:hover { text-decoration: underline; }
 .ledger-strip {
   font-family: var(--font-mono);
   font-size: 13px;
-  background: var(--ink);
+  background: #000000c7;
   color: #eef1f5;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 14px 20px;
   margin-bottom: 28px;
   display: flex;
@@ -264,7 +264,7 @@ tbody td {
   border-bottom: 1px solid var(--border);
 }
 
-tbody tr:hover { background: #fbfaf5; }
+tbody tr:hover { background: #f8f9fb; }
 
 td.num, th.num { font-family: var(--font-mono); text-align: right; }
 
